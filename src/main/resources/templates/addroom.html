@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/process}" th:object="${room}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <p>Room No. :<input type="text" th:field="*{roomno}" /></p>
+    <!--<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span><br />-->
+    <p>Description :<input type="text" th:field="*{description}" /></p>
+    <!--<span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br />-->
+    <p>Rules :<input type="text" th:field="*{rule}" /></p>
+    <!--<span th:if="${#fields.hasErrors('instructor')}" th:errors="*{instructor}"></span><br />-->
+    <p>Wifi :<input type="text" th:field="*{wifi}" /></p>
+    <!--<span th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></span><br />-->
+    <p>Cable :<input type="text" th:field="*{cable}" /></p>
+    <p>Private Bathroom :<input type="text" th:field="*{pbath}" /></p>
+    <p>Status :<input type="text" th:field="*{status}" /></p>
+    <input type="submit" value="Submit" />
+</form>
+
+
+<div th:replace="base :: footer"></div>
+</body>
+</html>

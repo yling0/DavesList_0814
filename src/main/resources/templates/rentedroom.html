@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Room List</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+<h1>Rented Rooms</h1>
+
+<table th:background="blue">
+
+    <tr>
+        <td><p>Room No.</p></td>
+        <td><p>Description</p></td>
+        <td><p>Rules</p></td>
+        <td><p>Wifi</p></td>
+        <td><p>Cable</p></td>
+        <td><p>Private Bathroom</p></td>
+        <td><p>Status</p></td>
+    </tr>
+
+
+    <th:block th:each="rentroom:${rentedRooms}">
+        <tr>
+            <td><p th:text="${rentroom.roomno}"/></td>
+            <td><p th:text="${rentroom.description}"/></td>
+            <td><p th:text="${rentroom.rule}"/></td>
+            <td><p th:text="${rentroom.wifi}"/></td>
+            <td><p th:text="${rentroom.cable}"/></td>
+            <td><p th:text="${rentroom.pbath}"/></td>
+            <td><p th:text="${rentroom.status}"/></td>
+        </tr>
+    </th:block>
+</table>
+
+
+<div th:replace="base :: footer"></div>
+</body>
+</html>
